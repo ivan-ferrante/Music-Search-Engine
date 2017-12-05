@@ -3,14 +3,14 @@
 This Search Engine is builded on all .html file (saved in local) of azlyrics.com.
 Our Search Engine is organized in 3 Python files:
 
-**Scraping.py:** Class that contains all method for extracting data from html file, and generates json file.
-**Index.py:** Class that contains all method for generate Vocabulary and Inverted Index from json files.
-**Search.py:** Class that contains all method for the search function.
+**Scraping.py:** Class that contains all method for extracting data from html file, and generates json file. </br>
+**Index.py:** Class that contains all method for generate Vocabulary and Inverted Index from json files. </br>
+**Search.py:** Class that contains all method for the search function. </br>
 
 ## Scraping.py
 
-The most important method of this class is **parsingAZLyrics(path).** This method takes in input a path to the directory that contains all the html files and return a dictionary for each html file.
-A second function of this class, **HTMLtoJSON(path,az),** creates the json file that contains a dictionary generated above.
+The most important method of this class is **parsingAZLyrics(path).** This method takes in input a path to the directory that contains all the html files and return a dictionary for each html file. </br>
+A second function of this class, **HTMLtoJSON(path,az),** creates the json file that contains a dictionary generated above. </br>
 In a first version of this Search Engine we stored all the json files on local disk, but now in the ‘main’ we have modified the code to upload all json files in a local MongoDB collection named LyricsDB.
 
 ## Index.py
