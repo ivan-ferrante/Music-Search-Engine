@@ -37,7 +37,7 @@ In the union query we return the top 10 song based on the cosine similarity valu
 
 For the “and-query” we normalized the tf-idf vectors and then used the skleran.cluster library for implement KMeans. </br>
 
-![alt text](http://it.tinypic.com/r/11mc95e/9)
+![alt text](Music-Search-Engine/image/and.png)
 
 In conclusion, we built a wordcloud based on a note for each cluster in order to understand which words of the cluster have more occurences and are more important. </br>
 
