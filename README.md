@@ -16,7 +16,7 @@ In a first version of this Search Engine we stored all the json files on local d
 ## Index.py
 
 In this python class the first method that we have realized is **wordNorm(text).** This function takes in input a string and return the normaliezed string. For the pre-processing of lyrics and queries we have used Python’s libraries NLTK to remove stopwords, punctuation and 
-to stem the text. Another library that we have used in this pre-processing part is Enchant. We noticed that most of the songs were written in English  (81,000 out of 86,000 total songs), thus we decided to consider, in the vocabulary, only the English words. This is allowed by **check(word)** method of Enchant library. </br>
+to stem the text.</br> Another library that we have used in this pre-processing part is Enchant. We noticed that most of the songs were written in English  (81,000 out of 86,000 total songs), thus we decided to consider, in the vocabulary, only the English words. This is allowed by **check(word)** method of Enchant library. </br>
 All the methods of Index.py work on local json files stored in a directory named LyricsDB. </br>
 Vocabulary of Search Engine is built by **createVocab(allwords)** that takes  in input the result of an another function (**allWords(jsondir)**) that returns all the normalized words of all the lyrics song. </br>
 The vocabulary assigns at every word an ID: {term : termID}.
@@ -27,7 +27,7 @@ The Inverted Index is a dictionary that assigns at every vocabulary’s termID a
 ## Search.py
 
 This class contains all methods for search function. The first step is retrieve the name of the documents that contains the word we want to search (allowed by **toSearch(query, invertedIndex, vocab)** ).  The second step is to transform into an array the query (**makeQuery(query, vocab)** ) and the lyrics of the song that contains the query (**text_in_vector(text_song, invertedIndex, vocab, json_name)**). </br>
-In the vector of the song, we put the relative TF-IDF value for each occurrence of every words of the vocabulary that is in the song, 0 otherwise. In the vector of the query, we put 1 for each occurrence of every words of the vocabulary that is in the query, 0 otherwise.
+In the vector of the song, we put the relative TF-IDF value for each occurrence of every words of the vocabulary that is in the song, 0 otherwise. </br> In the vector of the query, we put 1 for each occurrence of every words of the vocabulary that is in the query, 0 otherwise.
 Thus, now the two vector have the same length (len(vocab)) and we can compute the cosine similarity for each lyrics song: 
 **get_cosine(query_vector, lyrics_vector)** </br>
 
