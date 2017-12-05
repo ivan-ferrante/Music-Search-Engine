@@ -33,13 +33,13 @@ Thus, now the two vector have the same length (len(vocab)) and we can compute th
 
 In the union query we return the top 10 song based on the cosine similarity value ordinated by a max heap. </br>
 
-![Alt text](/Music-Search-Engine/image/union.png)
+![Alt text](/Music-Search-Engine/image/union.png?raw=true)
 
 For the “and-query” we normalized the tf-idf vectors and then used the skleran.cluster library for implement KMeans. </br>
 
-![Alt text](/Music-Search-Engine/image/and.png)
+![Alt text](/Music-Search-Engine/image/and.png?raw=true)
 
 In conclusion, we built a wordcloud based on a note for each cluster in order to understand which words of the cluster have more occurences and are more important. </br>
 
-![Alt text](/Music-Search-Engine/image/wordcloud.png)
+![Alt text](/Music-Search-Engine/image/wordcloud.png?raw=true)
 
